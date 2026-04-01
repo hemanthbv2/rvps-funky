@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RV Public School — Raising Thinkers for a World with AI | Jayanagar, Bangalore</title>
+  <meta name="description" content="RV Public School, Jayanagar, Bangalore. Pre-Nursery to Grade 10. CBSE curriculum with Robotics, Financial Literacy & Inquiry-Based Learning. Schedule a campus visit today.">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- PARTICLES -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- LOADER -->
+<div id="loader">
+  <svg width="60" height="70" viewBox="0 0 180 200">
+    <rect x="40" y="100" width="100" height="75" rx="16" fill="#1B2838" stroke="#00D4AA" stroke-width="2"/>
+    <rect x="50" y="40" width="80" height="62" rx="18" fill="#1B2838" stroke="#F5C518" stroke-width="2"/>
+    <circle cx="75" cy="70" r="7" fill="#00D4AA"/><circle cx="105" cy="70" r="7" fill="#00D4AA"/>
+    <path d="M78 83 Q90 90 102 83" stroke="#F5C518" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <line x1="90" y1="40" x2="90" y2="20" stroke="#F5C518" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="90" cy="16" r="5" fill="#F5C518"><animate attributeName="opacity" values=".3;1;.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  </svg>
+  <span class="loader-text">Initializing Explorer Bot...</span>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-brand">
+    <svg class="logo-ring" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="25" fill="#0B1120" stroke="#F5C518" stroke-width="1.5"/>
+      <circle cx="26" cy="26" r="19" fill="none" stroke="#F5C518" stroke-width=".5" opacity=".4"/>
+      <path d="M26 9L14 15v9c0 7.2 5 12.8 12 14.2C39 26.8 44 21.2 44 14v-9L26 9z" fill="#0F1A2E" stroke="#F5C518" stroke-width="1.3"/>
+      <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Syne,sans-serif" font-weight="900" font-size="11" fill="#F5C518">RV</text>
+    </svg>
+    <div class="nav-name">RV <em>Public School</em></div>
+  </div>
+  <div class="nav-links">
+    <a href="#xbridge">Explore</a>
+    <a href="#why-sec">Why RVPS</a>
+    <a href="#testi-sec">Parents</a>
+    <a href="#faq-sec">FAQ</a>
+  </div>
+  <button class="nav-cta" onclick="openForm()">Apply Now →</button>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#xbridge" onclick="closeMobileMenu()">Explore School</a>
+  <a href="#why-sec" onclick="closeMobileMenu()">Why RVPS</a>
+  <a href="#testi-sec" onclick="closeMobileMenu()">Parents Say</a>
+  <a href="#faq-sec" onclick="closeMobileMenu()">FAQ</a>
+  <button class="nav-cta" style="margin-top:.5rem;text-align:center;padding:.7rem" onclick="openForm();closeMobileMenu()">Apply Now →</button>
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="hero">
+  <!-- LEFT SIDE: Content -->
+  <div class="hero-left">
+
+    <div class="trust-strip">
+      <svg width="22" height="22" viewBox="0 0 52 52" fill="none" style="flex-shrink:0">
+        <circle cx="26" cy="26" r="25" fill="#0B1120" stroke="#F5C518" stroke-width="1.5"/>
+        <path d="M26 9L14 15v9c0 7.2 5 12.8 12 14.2C39 26.8 44 21.2 44 14v-9L26 9z" fill="#0F1A2E" stroke="#F5C518" stroke-width="1.3"/>
+        <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Syne,sans-serif" font-weight="900" font-size="11" fill="#F5C518">RV</text>
+      </svg>
+      <span class="trust-strip-name">RV Public School</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-strip-sub">Rashtreeya Sikshana Samithi Trust ®</span>
+    </div>
+
+    <div class="pill" onclick="openForm()">
+      <span class="pdot"></span>
+      <span class="pbadge">LIVE</span>
+      <span class="ptxt">Admission Open 2026–27 — Limited Seats</span>
+      <span style="color:rgba(245,197,24,.5);margin-left:.1rem">→</span>
+    </div>
+
+    <h1 class="hero-headline">
+      Let's explore how your child <em>learns</em>
+    </h1>
+
+    <p class="hero-sub">
+      At <strong>RVPS School in Bangalore</strong>, learning begins with questions, not answers.
+      From Pre-Nursery to Grade 10, students are taught to engage with what they learn — through discussion,
+      hands-on work, and observation. The focus is on helping students <strong>think for themselves</strong>.
+    </p>
+
+    <div class="chips">
+      <span class="chip ct">🤖 Robotics Lab</span>
+      <span class="chip cg">💰 Financial Literacy</span>
+      <span class="chip cp">🔄 Barter Economics</span>
+      <span class="chip cc">🧠 Inquiry-Based</span>
+    </div>
+
+    <div class="ctas">
+      <button class="btn-gold" onclick="openForm()">Schedule a Campus Visit →</button>
+      <a class="btn-outline" href="#xbridge">Explore the School ↓</a>
+    </div>
+
+    <div class="proof">
+      <div class="avs">
+        <div class="av" style="background:linear-gradient(135deg,#1B4B3A,#0F6E56)">P</div>
+        <div class="av" style="background:linear-gradient(135deg,#3D1B5A,#5A2D8B)">R</div>
+        <div class="av" style="background:linear-gradient(135deg,#4B2D1B,#7A4520)">A</div>
+        <div class="av" style="background:linear-gradient(135deg,#1B3A4B,#185FA5)">S</div>
+        <div class="av" style="background:linear-gradient(135deg,#3A1B2D,#7A2040)">M</div>
+      </div>
+      <div class="ptext">
+        <strong>500+ families trust RVPS</strong>
+        <div class="stars">★★★★★ <span style="color:var(--dim);font-size:.6rem">98% parent satisfaction</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE: Robot Mascot -->
+  <div class="hero-right">
+    <div class="robot-stage" id="robot-stage" style="position:relative">
+
+      <!-- Antenna -->
+      <div class="robot-part robot-antenna">
+        <svg width="40" height="30" viewBox="0 0 40 30">
+          <line x1="20" y1="28" x2="20" y2="8" stroke="#F5C518" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="20" cy="6" r="5" fill="#F5C518" opacity=".3"/>
+          <circle cx="20" cy="6" r="3.5" fill="#F5C518">
+            <animate attributeName="opacity" values=".4;1;.4" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="3.5;5;3.5" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+
+      <!-- Head -->
+      <div class="robot-part robot-head">
+        <svg width="120" height="75" viewBox="0 0 120 75">
+          <rect x="10" y="5" width="100" height="65" rx="20" fill="#0F1A2E" stroke="#F5C518" stroke-width="2"/>
+          <rect x="22" y="18" width="76" height="34" rx="12" fill="rgba(245,197,24,.04)" stroke="rgba(245,197,24,.1)" stroke-width=".8"/>
+          <circle cx="42" cy="35" r="10" fill="#00D4AA"/>
+          <circle cx="39" cy="32" r="3.5" fill="#fff" opacity=".8"/>
+          <circle cx="78" cy="35" r="10" fill="#00D4AA"/>
+          <circle cx="75" cy="32" r="3.5" fill="#fff" opacity=".8"/>
+          <path d="M47 55 Q60 63 73 55" stroke="#F5C518" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="30" cy="48" rx="5" ry="3" fill="#FF6B6B" opacity=".2"/>
+          <ellipse cx="90" cy="48" rx="5" ry="3" fill="#FF6B6B" opacity=".2"/>
+        </svg>
+      </div>
+
+      <!-- Body -->
+      <div class="robot-part robot-body-part">
+        <svg width="130" height="115" viewBox="0 0 130 115">
+          <rect x="40" y="0" width="50" height="14" rx="5" fill="#1B2838" stroke="#F5C518" stroke-width=".8" opacity=".6"/>
+          <rect x="12" y="12" width="106" height="100" rx="18" fill="#0F1A2E" stroke="#00D4AA" stroke-width="2"/>
+          <rect x="30" y="32" width="70" height="8" rx="4" fill="none" stroke="#F5C518" stroke-width=".8" opacity=".25"/>
+          <rect x="30" y="47" width="48" height="8" rx="4" fill="none" stroke="#F5C518" stroke-width=".8" opacity=".18"/>
+          <circle cx="65" cy="82" r="12" fill="none" stroke="#00D4AA" stroke-width="1.5" opacity=".4"/>
+          <circle cx="65" cy="82" r="6" fill="#00D4AA" opacity=".3">
+            <animate attributeName="opacity" values=".2;.7;.2" dur="2.5s" repeatCount="indefinite"/>
+          </circle>
+          <rect x="15" y="50" width="6" height="16" rx="3" fill="#00D4AA" opacity=".25"/>
+          <rect x="109" y="50" width="6" height="16" rx="3" fill="#00D4AA" opacity=".25"/>
+        </svg>
+      </div>
+
+      <!-- Left Arm -->
+      <div class="robot-part robot-arm-left">
+        <svg width="50" height="18" viewBox="0 0 50 18">
+          <rect x="0" y="3" width="44" height="12" rx="6" fill="#1B2838" stroke="#F5C518" stroke-width="1.2"/>
+          <circle cx="7" cy="9" r="5" fill="#3D5A80" stroke="#F5C518" stroke-width=".8"/>
+        </svg>
+      </div>
+
+      <!-- Right Arm -->
+      <div class="robot-part robot-arm-right">
+        <svg width="50" height="18" viewBox="0 0 50 18">
+          <rect x="6" y="3" width="44" height="12" rx="6" fill="#1B2838" stroke="#F5C518" stroke-width="1.2"/>
+          <circle cx="43" cy="9" r="5" fill="#3D5A80" stroke="#F5C518" stroke-width=".8"/>
+        </svg>
+      </div>
+
+      <!-- Wheels -->
+      <div class="robot-part robot-wheels">
+        <svg width="95" height="22" viewBox="0 0 95 22">
+          <rect x="2" y="2" width="35" height="18" rx="9" fill="#3D5A80" stroke="#F5C518" stroke-width="1.2"/>
+          <rect x="58" y="2" width="35" height="18" rx="9" fill="#3D5A80" stroke="#F5C518" stroke-width="1.2"/>
+        </svg>
+      </div>
+
+      <!-- Floating labels -->
+      <div class="float-label fl-teal fl-anim1" style="top:25px;right:-30px;">
+        <span class="fl-tag">UNIQUE PROGRAM</span>
+        <span class="fl-text">🤖 Robotics Lab</span>
+      </div>
+      <div class="float-label fl-gold fl-anim2" style="top:120px;left:-40px;">
+        <span class="fl-tag">ONLY IN JAYANAGAR</span>
+        <span class="fl-text">💰 Finance Grade 1</span>
+      </div>
+      <div class="float-label fl-purple fl-anim3" style="bottom:50px;right:-25px;">
+        <span class="fl-tag">CURRICULUM</span>
+        <span class="fl-text">📋 CBSE Board</span>
+      </div>
+
+      <!-- Speech bubble -->
+      <div class="speech-bubble">
+        <div class="bot-label">🤖 Hi! I'm the RVPS Explorer Bot</div>
+        <p>Want a quick tour? Scroll down and I'll guide you!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════════ STATS ════════ -->
+<div class="stats reveal" id="stats-section">
+  <div class="stats-grid">
+    <div><div class="stat-num"><span class="cnt" data-t="500">0</span>+</div><div class="stat-label">Happy Students</div></div>
+    <div><div class="stat-num"><span class="cnt" data-t="50">0</span>+</div><div class="stat-label">Dedicated Teachers</div></div>
+    <div><div class="stat-num"><span class="cnt" data-t="15">0</span>+</div><div class="stat-label">Years of Excellence</div></div>
+    <div><div class="stat-num"><span class="cnt" data-t="98">0</span>%</div><div class="stat-label">Parent Satisfaction</div></div>
+  </div>
+</div>
+
+<!-- ════════ EXPLORE BRIDGE (Gamification Hub) ════════ -->
+<section class="xbridge" id="xbridge">
+  <div class="xbridge-inner">
+    <div class="stag">✦ Guided by your Explorer Bot</div>
+    <h3>What would you like to understand first?</h3>
+    <p>Click any section to explore — the bot will guide you through each one 🎉</p>
+    <div class="explore-grid" id="explore-grid">
+      <button class="explore-btn" data-key="campus"><span class="btn-icon">🏫</span><span class="btn-text">Explore the Campus</span></button>
+      <button class="explore-btn" data-key="activities"><span class="btn-icon">📚</span><span class="btn-text">Classroom Activities &amp; Courses</span></button>
+      <button class="explore-btn" data-key="learning"><span class="btn-icon">🧠</span><span class="btn-text">How Students Learn at RVPS</span></button>
+      <button class="explore-btn" data-key="principal"><span class="btn-icon">🎤</span><span class="btn-text">What the Principal has to say</span></button>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>Exploration Progress</span><span id="progress-count">0 / 4</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CAMPUS SECTION ════════ -->
+<div class="explore-section" id="section-campus">
+  <div class="section-inner">
+    <div class="mascot-strip">
+      <svg class="mini-bot" viewBox="0 0 50 50"><rect x="12" y="12" width="26" height="20" rx="6" fill="#1B2838" stroke="#F5C518" stroke-width="1.5"/><circle cx="20" cy="22" r="3" fill="#00D4AA"/><circle cx="30" cy="22" r="3" fill="#00D4AA"/><line x1="25" y1="12" x2="25" y2="6" stroke="#F5C518" stroke-width="1.5"/><circle cx="25" cy="5" r="2" fill="#F5C518"/></svg>
+      <p>"Students learn best when the environment inspires curiosity. Take a look!"</p>
+    </div>
+    <div class="sh"><h2>Explore the <em>Campus</em></h2><div class="sdiv"></div><p>A vibrant, safe environment designed for every stage of learning.</p></div>
+
+    <!-- Campus SVG -->
+    <div class="campus-visual">
+      <svg viewBox="0 0 800 280" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <rect width="800" height="280" fill="#0A1525" rx="16"/>
+        <defs><linearGradient id="sky-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0A1525"/><stop offset="100%" stop-color="#111E30"/></linearGradient></defs>
+        <rect width="800" height="280" fill="url(#sky-g)" rx="16"/>
+        <circle cx="50" cy="30" r="1.5" fill="#F5C518" opacity=".6"/><circle cx="150" cy="20" r="1" fill="#fff" opacity=".4"/><circle cx="650" cy="25" r="1.5" fill="#00D4AA" opacity=".5"/><circle cx="720" cy="40" r="1" fill="#fff" opacity=".3"/><circle cx="400" cy="15" r="1" fill="#F5C518" opacity=".4"/>
+        <rect x="0" y="220" width="800" height="60" fill="#0D1B2A"/><rect x="0" y="218" width="800" height="6" fill="#1B2838"/>
+        <rect x="260" y="80" width="280" height="140" fill="#0D1B2A" stroke="#1B2838" stroke-width="2" rx="2"/>
+        <polygon points="240,80 400,30 560,80" fill="#1B2838" stroke="#F5C518" stroke-width="1.5"/>
+        <circle cx="400" cy="55" r="18" fill="#0D1B2A" stroke="#F5C518" stroke-width="1.5"/>
+        <text x="400" y="57" text-anchor="middle" dominant-baseline="middle" font-family="Syne,sans-serif" font-weight="900" font-size="9" fill="#F5C518">RV</text>
+        <rect x="290" y="110" width="40" height="35" rx="3" fill="#1B4060" stroke="#2A5080" stroke-width="1"/>
+        <rect x="380" y="110" width="40" height="35" rx="3" fill="#1B4060" stroke="#2A5080" stroke-width="1"/>
+        <rect x="470" y="110" width="40" height="35" rx="3" fill="#1B4060" stroke="#2A5080" stroke-width="1"/>
+        <rect x="292" y="112" width="36" height="31" rx="2" fill="rgba(245,197,24,.06)"/>
+        <rect x="382" y="112" width="36" height="31" rx="2" fill="rgba(0,212,170,.08)"/>
+        <rect x="375" y="165" width="50" height="55" rx="3" fill="#1B2838" stroke="#F5C518" stroke-width="1"/>
+        <circle cx="419" cy="194" r="3" fill="#F5C518" opacity=".8"/>
+        <rect x="100" y="120" width="160" height="100" fill="#0D1B2A" stroke="#1B2838" stroke-width="1.5" rx="2"/>
+        <text x="105" y="138" font-family="Syne,sans-serif" font-weight="700" font-size="8" fill="#00D4AA" letter-spacing=".06em">STEM &amp; ROBOTICS LAB</text>
+        <rect x="540" y="130" width="160" height="90" fill="#0D1B2A" stroke="#1B2838" stroke-width="1.5" rx="2"/>
+        <text x="545" y="148" font-family="Syne,sans-serif" font-weight="700" font-size="8" fill="#8B5CF6" letter-spacing=".06em">CREATIVE STUDIOS</text>
+        <rect x="50" y="190" width="8" height="30" fill="#1B2838"/><ellipse cx="54" cy="185" rx="20" ry="25" fill="#0F3020" opacity=".9"/>
+        <rect x="680" y="185" width="8" height="35" fill="#1B2838"/><ellipse cx="684" cy="180" rx="20" ry="25" fill="#0F3020" opacity=".9"/>
+        <rect x="385" y="220" width="30" height="60" fill="#1B2838" opacity=".6"/>
+      </svg>
+    </div>
+
+    <div class="sh" style="margin-top:2rem"><h2>Find <em>Us</em></h2><div class="sdiv"></div></div>
+    <div style="border-radius:14px;overflow:hidden;border:1px solid var(--line)">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15554.3!2d77.593!3d12.9279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158a4ce9a98f%3A0x2a30f08b9f3e4b0a!2sJayanagar%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="240" style="display:block;border:0;filter:brightness(.82) saturate(1.1)" loading="lazy" allowfullscreen title="RVPS Location"></iframe>
+    </div>
+    <div class="campus-cta"><a href="https://maps.google.com/?q=Jayanagar+Bangalore" target="_blank">Get Directions →</a></div>
+  </div>
+</div>
+
+<!-- ════════ ACTIVITIES SECTION ════════ -->
+<div class="explore-section" id="section-activities">
+  <div class="section-inner">
+    <div class="mascot-strip">
+      <svg class="mini-bot" viewBox="0 0 50 50"><rect x="12" y="12" width="26" height="20" rx="6" fill="#1B2838" stroke="#F5C518" stroke-width="1.5"/><circle cx="20" cy="22" r="3" fill="#00D4AA"/><circle cx="30" cy="22" r="3" fill="#00D4AA"/><line x1="25" y1="12" x2="25" y2="6" stroke="#F5C518" stroke-width="1.5"/><circle cx="25" cy="5" r="2" fill="#F5C518"/></svg>
+      <p>"Each stage is designed around how children actually learn at that age."</p>
+    </div>
+    <div class="sh"><h2>Classroom Activities &amp; <em>Courses</em></h2><div class="sdiv"></div><p>A thoughtfully crafted curriculum from Pre-Nursery through Grade 10.</p></div>
+    <div class="grade-tabs">
+      <button class="grade-tab active" data-grade="early">Pre-Nursery – KG</button>
+      <button class="grade-tab" data-grade="primary">Grade 1 – 5</button>
+      <button class="grade-tab" data-grade="middle">Grade 6 – 8</button>
+      <button class="grade-tab" data-grade="senior">Grade 9 – 10</button>
+    </div>
+    <div class="activity-grid" id="activity-grid">
+      <div class="activity-card"><div class="card-icon">🎮</div><h4>Play-Based Learning</h4><p>Structured play developing motor skills, social skills and early cognition.</p><span class="activity-badge">Pre-Nursery – KG</span></div>
+      <div class="activity-card"><div class="card-icon">🎨</div><h4>Sensory Activities</h4><p>Hands-on exploration with colors, textures, sounds and shapes.</p><span class="activity-badge">Pre-Nursery – KG</span></div>
+      <div class="activity-card"><div class="card-icon">📖</div><h4>Story &amp; Language</h4><p>Storytelling, rhymes and early reading for language development.</p><span class="activity-badge">Pre-Nursery – KG</span></div>
+      <div class="activity-card"><div class="card-icon">🎵</div><h4>Music &amp; Movement</h4><p>Rhythm, songs and dance developing coordination.</p><span class="activity-badge">Pre-Nursery – KG</span></div>
+      <div class="activity-card"><div class="card-icon">🌱</div><h4>Nature Exploration</h4><p>Outdoor learning connecting children to the world.</p><span class="activity-badge">Pre-Nursery – KG</span></div>
+      <div class="activity-card"><div class="card-icon">🧮</div><h4>Early Numeracy</h4><p>Counting, patterns and math through games.</p><span class="activity-badge">Pre-Nursery – KG</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ LEARNING SECTION ════════ -->
+<div class="explore-section" id="section-learning">
+  <div class="section-inner">
+    <div class="mascot-strip">
+      <svg class="mini-bot" viewBox="0 0 50 50"><rect x="12" y="12" width="26" height="20" rx="6" fill="#1B2838" stroke="#F5C518" stroke-width="1.5"/><circle cx="20" cy="22" r="3" fill="#00D4AA"/><circle cx="30" cy="22" r="3" fill="#00D4AA"/><line x1="25" y1="12" x2="25" y2="6" stroke="#F5C518" stroke-width="1.5"/><circle cx="25" cy="5" r="2" fill="#F5C518"/></svg>
+      <p>"Questions lead to discovery here. This is how learning actually works."</p>
+    </div>
+    <div class="sh"><h2>How Students <em>Learn</em> at RVPS</h2><div class="sdiv"></div><p>Not about memorising — about understanding, questioning and applying.</p></div>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal"><div class="pillar-num">1</div><div><div class="pillar-icon">❓</div><h4>Inquiry-Based Learning</h4><p>Every lesson starts with a question. Students build understanding through curiosity, not rote repetition.</p></div></div>
+      <div class="pillar-card reveal d1"><div class="pillar-num">2</div><div><div class="pillar-icon">💬</div><h4>Discussion &amp; Dialogue</h4><p>Classrooms are spaces for conversation — students listen, challenge and co-build knowledge.</p></div></div>
+      <div class="pillar-card reveal d2"><div class="pillar-num">3</div><div><div class="pillar-icon">🔬</div><h4>Hands-On Research</h4><p>From experiments to structured projects — students find and apply real information.</p></div></div>
+      <div class="pillar-card reveal d3"><div class="pillar-num">4</div><div><div class="pillar-icon">🧩</div><h4>Independent Thinking</h4><p>The goal is clarity and confidence — students approach any problem with a steady, capable mind.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PRINCIPAL SECTION ════════ -->
+<div class="explore-section" id="section-principal">
+  <div class="section-inner">
+    <div class="mascot-strip">
+      <svg class="mini-bot" viewBox="0 0 50 50"><rect x="12" y="12" width="26" height="20" rx="6" fill="#1B2838" stroke="#F5C518" stroke-width="1.5"/><circle cx="20" cy="22" r="3" fill="#00D4AA"/><circle cx="30" cy="22" r="3" fill="#00D4AA"/><line x1="25" y1="12" x2="25" y2="6" stroke="#F5C518" stroke-width="1.5"/><circle cx="25" cy="5" r="2" fill="#F5C518"/></svg>
+      <p>"Hear directly from the person who leads this school."</p>
+    </div>
+    <div class="sh"><h2>A Message from the <em>Principal</em></h2><div class="sdiv"></div></div>
+    <div class="principal-layout">
+      <div class="principal-img">
+        <svg viewBox="0 0 180 220" width="100%"><rect width="180" height="220" fill="#0D1B2A"/><ellipse cx="90" cy="110" rx="70" ry="80" fill="rgba(245,197,24,.04)"/><rect x="45" y="135" width="90" height="85" rx="12" fill="#1B2838"/><rect x="45" y="145" width="90" height="4" fill="#F5C518" opacity=".35"/><ellipse cx="90" cy="100" rx="38" ry="44" fill="#C8956C"/><ellipse cx="90" cy="70" rx="38" ry="22" fill="#2D1B0E"/><circle cx="90" cy="80" r="3" fill="#FF3366" opacity=".9"/><ellipse cx="78" cy="96" rx="6" ry="5" fill="#fff"/><circle cx="78" cy="96" r="3.5" fill="#2D1B0E"/><ellipse cx="102" cy="96" rx="6" ry="5" fill="#fff"/><circle cx="102" cy="96" r="3.5" fill="#2D1B0E"/><path d="M82 110 Q90 116 98 110" stroke="#8B4513" stroke-width="1.5" fill="none" stroke-linecap="round"/><rect x="60" y="160" width="60" height="20" rx="4" fill="rgba(245,197,24,.15)" stroke="rgba(245,197,24,.3)" stroke-width=".8"/><text x="90" y="173" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="7" fill="#F5C518">PRINCIPAL</text></svg>
+      </div>
+      <div class="principal-msg reveal d1">
+        <h4>Dear Parents,</h4>
+        <p>At RV Public School, we believe every child is naturally curious. Our role is not to fill their minds with information, but to give them the tools to seek it, understand it, and use it thoughtfully.</p>
+        <p>We create environments where questions are encouraged, exploration is valued, and each student grows at their own pace — not the curriculum's pace.</p>
+        <p>I invite you to visit our campus and see for yourself how learning comes alive here.</p>
+        <div class="principal-sig">Dr. Meera Sharma <span>Principal, RV Public School</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ MASCOT RETURN ════════ -->
+<div class="mascot-return" id="mascot-return">
+  <div class="return-bot">
+    <svg viewBox="0 0 180 200" style="width:100%;height:100%">
+      <rect x="35" y="172" width="35" height="18" rx="9" fill="#3D5A80" stroke="#F5C518" stroke-width="1.5"/>
+      <rect x="110" y="172" width="35" height="18" rx="9" fill="#3D5A80" stroke="#F5C518" stroke-width="1.5"/>
+      <rect x="40" y="100" width="100" height="75" rx="16" fill="#1B2838" stroke="#00D4AA" stroke-width="2"/>
+      <circle cx="90" cy="155" r="7" fill="#00D4AA" opacity=".35"/>
+      <rect x="12" y="110" width="30" height="14" rx="7" fill="#1B2838" stroke="#F5C518" stroke-width="1.5"/>
+      <rect x="138" y="110" width="30" height="14" rx="7" fill="#1B2838" stroke="#F5C518" stroke-width="1.5"/>
+      <rect x="50" y="40" width="80" height="62" rx="18" fill="#1B2838" stroke="#F5C518" stroke-width="2"/>
+      <circle cx="75" cy="70" r="7" fill="#00D4AA"/><circle cx="73" cy="68" r="2.5" fill="#fff" opacity=".8"/>
+      <circle cx="105" cy="70" r="7" fill="#00D4AA"/><circle cx="103" cy="68" r="2.5" fill="#fff" opacity=".8"/>
+      <path d="M78 83 Q90 90 102 83" stroke="#F5C518" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <line x1="90" y1="40" x2="90" y2="20" stroke="#F5C518" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="90" cy="16" r="5" fill="#F5C518" opacity=".6"/>
+    </svg>
+  </div>
+  <div class="return-bubble">🤖 <strong>Great choice!</strong> What else would you like to explore?</div>
+  <div class="return-buttons" id="return-buttons"></div>
+</div>
+
+<!-- ════════ FINAL UNLOCK ════════ -->
+<div class="final-unlock" id="final-unlock">
+  <p>🎉 You've explored everything! <em>Want to see how students learn in real life?</em></p>
+  <button class="big-cta" onclick="openForm()">🏫 Visit the RVPS Campus!</button>
+</div>
+
+<!-- ════════ WHY RVPS (USPs) ════════ -->
+<section class="sec" id="why-sec">
+  <div class="sec-inner">
+    <div class="sh reveal">
+      <div class="stag">✦ What Makes Us Different</div>
+      <h2>Programs no other school<br>in Jayanagar <em>offers</em></h2>
+      <div class="sdiv"></div>
+      <p>We don't just follow the CBSE curriculum — we go beyond it with programs that prepare children for the real world from Day 1.</p>
+    </div>
+    <div class="usp-grid">
+      <div class="ucard ug reveal"><div class="ucard-ic">🤖</div><h3>Robotics &amp; Coding Lab</h3><p>Students build, program and test real robots from Grade 3 — developing problem-solving and engineering thinking.</p><span class="ubadge bg">From Grade 3</span></div>
+      <div class="ucard ut reveal d1"><div class="ucard-ic">💰</div><h3>Financial Literacy</h3><p>The only school in Jayanagar teaching real-world money skills from Grade 1 — budgeting, saving and understanding value.</p><span class="ubadge bt">All Grades</span></div>
+      <div class="ucard up reveal d2"><div class="ucard-ic">🔄</div><h3>Barter Economics</h3><p>Our signature method — students trade skills in structured barter activities, building negotiation and empathy.</p><span class="ubadge bp">Signature Method</span></div>
+      <div class="ucard reveal"><div class="ucard-ic">🎨</div><h3>Art-Integrated Learning</h3><p>History through murals. Science through sculpture. Math through patterns. Every subject comes alive with creativity.</p><span class="ubadge bt">All Grades</span></div>
+      <div class="ucard ub reveal d1"><div class="ucard-ic">🧠</div><h3>AI &amp; Future Skills</h3><p>Grade 9–10 students explore AI, data reasoning and responsible tech thinking — ready for the future.</p><span class="ubadge bp">Grade 9 – 10</span></div>
+      <div class="ucard reveal d2"><div class="ucard-ic">🌱</div><h3>Nature &amp; Outdoor Learning</h3><p>Every stage connects learning to the real world beyond the classroom walls.</p><span class="ubadge bt">All Grades</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PHILOSOPHY SPLIT ════════ -->
+<section class="sec sec-alt">
+  <div class="sec-inner">
+    <div class="split">
+      <div class="split-txt reveal">
+        <div class="stag">✦ Our Philosophy</div>
+        <h2>Learning that begins<br>with a <em>question</em></h2>
+        <p>We don't fill minds with information. We give children the tools to seek it, understand it, and use it — for life.</p>
+        <div class="split-list">
+          <div class="sli reveal"><div class="sli-dot" style="background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.25)">❓</div><div class="sli-body"><h4>Inquiry-Based Learning</h4><p>Every lesson starts with a question, not an answer.</p></div></div>
+          <div class="sli reveal d1"><div class="sli-dot" style="background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.25)">💬</div><div class="sli-body"><h4>Discussion &amp; Dialogue</h4><p>Classrooms built on conversation, not lectures.</p></div></div>
+          <div class="sli reveal d2"><div class="sli-dot" style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25)">🔬</div><div class="sli-body"><h4>Hands-On Research</h4><p>Students find, evaluate and apply real information.</p></div></div>
+          <div class="sli reveal d3"><div class="sli-dot" style="background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.25)">🧩</div><div class="sli-body"><h4>Independent Thinking</h4><p>Raising children who approach complexity with clarity.</p></div></div>
+        </div>
+      </div>
+      <!-- Philosophy Visual -->
+      <div class="reveal d1" style="display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 340 380" width="100%" style="max-width:300px">
+          <defs><radialGradient id="pg" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#00D4AA" stop-opacity=".1"/><stop offset="100%" stop-color="#00D4AA" stop-opacity="0"/></radialGradient></defs>
+          <ellipse cx="170" cy="190" rx="140" ry="140" fill="url(#pg)"/>
+          <path d="M170 80 C140 80 118 102 118 130 C118 148 128 164 142 172 L142 196 L198 196 L198 172 C212 164 222 148 222 130 C222 102 200 80 170 80Z" fill="#0F1A2E" stroke="#F5C518" stroke-width="2"/>
+          <path d="M155 155 Q165 140 170 155 Q175 140 185 155" stroke="#F5C518" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="170" cy="125" rx="18" ry="17" fill="rgba(245,197,24,.1)"><animate attributeName="opacity" values=".4;1;.4" dur="2.5s" repeatCount="indefinite"/></ellipse>
+          <rect x="150" y="196" width="40" height="8" rx="3" fill="#1B2838" stroke="#F5C518" stroke-width="1"/>
+          <rect x="154" y="204" width="32" height="6" rx="3" fill="#1B2838" stroke="#F5C518" stroke-width=".8"/>
+          <g><animateTransform attributeName="transform" type="rotate" from="0 170 175" to="360 170 175" dur="12s" repeatCount="indefinite"/><circle cx="170" cy="55" r="24" fill="#0F1A2E" stroke="rgba(0,212,170,.3)" stroke-width="1.2"/><text x="170" y="51" text-anchor="middle" font-size="13" fill="#00D4AA">🤖</text><text x="170" y="65" text-anchor="middle" font-family="Syne,sans-serif" font-size="6.5" fill="#00D4AA" font-weight="700">Robotics</text></g>
+          <g><animateTransform attributeName="transform" type="rotate" from="90 170 175" to="450 170 175" dur="12s" repeatCount="indefinite"/><circle cx="170" cy="55" r="24" fill="#0F1A2E" stroke="rgba(245,197,24,.3)" stroke-width="1.2"/><text x="170" y="51" text-anchor="middle" font-size="13" fill="#F5C518">💰</text><text x="170" y="65" text-anchor="middle" font-family="Syne,sans-serif" font-size="6.5" fill="#F5C518" font-weight="700">Finance</text></g>
+          <g><animateTransform attributeName="transform" type="rotate" from="180 170 175" to="540 170 175" dur="12s" repeatCount="indefinite"/><circle cx="170" cy="55" r="24" fill="#0F1A2E" stroke="rgba(139,92,246,.3)" stroke-width="1.2"/><text x="170" y="51" text-anchor="middle" font-size="13" fill="#A78BFA">🔄</text><text x="170" y="65" text-anchor="middle" font-family="Syne,sans-serif" font-size="6.5" fill="#A78BFA" font-weight="700">Barter</text></g>
+          <g><animateTransform attributeName="transform" type="rotate" from="270 170 175" to="630 170 175" dur="12s" repeatCount="indefinite"/><circle cx="170" cy="55" r="24" fill="#0F1A2E" stroke="rgba(96,165,250,.3)" stroke-width="1.2"/><text x="170" y="51" text-anchor="middle" font-size="13" fill="#60A5FA">🧠</text><text x="170" y="65" text-anchor="middle" font-family="Syne,sans-serif" font-size="6.5" fill="#60A5FA" font-weight="700">Inquiry</text></g>
+          <rect x="90" y="265" width="160" height="30" rx="10" fill="rgba(245,197,24,.08)" stroke="rgba(245,197,24,.2)" stroke-width="1"/>
+          <text x="170" y="279" text-anchor="middle" font-family="Syne,sans-serif" font-weight="900" font-size="9.5" fill="#F5C518">RAISING THINKERS</text>
+          <text x="170" y="291" text-anchor="middle" font-family="Syne,sans-serif" font-weight="600" font-size="7.5" fill="rgba(240,244,248,.6)">for a world with AI</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section class="sec" id="testi-sec">
+  <div class="sec-inner">
+    <div class="sh reveal">
+      <div class="stag">✦ Parent Voices</div>
+      <h2>Don't take our word <em>for it</em></h2>
+      <div class="sdiv"></div>
+      <p>Hear from families who've seen the RVPS difference firsthand.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal"><div class="tq">"</div><p>My daughter used to hate Mondays. Now she asks to go to school on weekends. She comes home with questions, not just homework.</p><div class="tau"><div class="tav" style="background:linear-gradient(135deg,#1B4B3A,#0F6E56)">P</div><div><strong>Priya Venkatesh</strong><span>Parent · Grade 3</span></div></div></div>
+      <div class="tcard reveal d1"><div class="tq">"</div><p>The Financial Literacy program genuinely surprised me. My 8-year-old understands budgeting better than most adults. RVPS teaches things that matter for life.</p><div class="tau"><div class="tav" style="background:linear-gradient(135deg,#3D1B5A,#5A2D8B)">R</div><div><strong>Rahul Shetty</strong><span>Parent · Grade 2</span></div></div></div>
+      <div class="tcard reveal d2"><div class="tq">"</div><p>We visited 6 schools in South Bangalore. The robotics lab, the inquiry approach, the small class sizes — nothing else came close.</p><div class="tau"><div class="tav" style="background:linear-gradient(135deg,#4B2D1B,#7A4520)">A</div><div><strong>Anita &amp; Suresh Kumar</strong><span>Parents · Grade 5</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAQ ════════ -->
+<section class="sec sec-alt" id="faq-sec">
+  <div class="sec-inner">
+    <div class="sh reveal">
+      <div class="stag">✦ Common Questions</div>
+      <h2>Everything you need to <em>know</em></h2>
+      <div class="sdiv"></div>
+    </div>
+    <div class="faq-wrap">
+      <div class="fi reveal"><button class="fq">What educational board does RVPS follow? <span class="fic">+</span></button><div class="fa"><p>CBSE, integrated with our own inquiry-based framework focused on conceptual understanding, not rote memorization.</p></div></div>
+      <div class="fi reveal"><button class="fq">What is the fee structure for 2026–27? <span class="fic">+</span></button><div class="fa"><p>Annual fees range from ₹85,000 to ₹1,20,000 depending on grade — inclusive of tuition, activities and lab fees. Sibling discounts and need-based scholarships available.</p></div></div>
+      <div class="fi reveal"><button class="fq">What is the admissions timeline? <span class="fic">+</span></button><div class="fa"><p>Applications open Jan 2026 → Campus visits Feb → Offers March → Fee confirmation April → School begins June 2026. Seats are strictly limited.</p></div></div>
+      <div class="fi reveal"><button class="fq">What is the student-teacher ratio? <span class="fic">+</span></button><div class="fa"><p>25:1 — every child is known by name, not roll number, ensuring personalized attention.</p></div></div>
+      <div class="fi reveal"><button class="fq">At what age can my child join Pre-Nursery? <span class="fic">+</span></button><div class="fa"><p>Children who have completed 2 years 10 months by June 1st of the academic year are eligible.</p></div></div>
+      <div class="fi reveal"><button class="fq">Do you offer transport? <span class="fic">+</span></button><div class="fa"><p>Yes — GPS-tracked buses covering all major routes across South Bangalore, with female attendants on every vehicle.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA BANNER ════════ -->
+<div class="ctabanner reveal" id="cta-banner">
+  <h2>
+    <span style="background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">RAISING THINKERS</span><br>
+    <span style="font-size:clamp(.8rem,1.5vw,1rem);font-weight:600;color:var(--muted);font-family:var(--sb);-webkit-text-fill-color:var(--muted)">for a world with AI — Jayanagar, Bangalore</span>
+  </h2>
+  <p>Admissions for 2026–27 are open. See the robotics lab, meet the teachers, and discover what a school that starts with questions really feels like.</p>
+  <div class="cbtns">
+    <button class="btn-gold" onclick="openForm()">Book a Campus Visit →</button>
+    <a class="btn-outline" href="https://wa.me/918012345678" target="_blank">WhatsApp Us 💬</a>
+  </div>
+</div>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem">
+        <svg width="28" height="28" viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="25" fill="#0B1120" stroke="#F5C518" stroke-width="1.5"/><path d="M26 9L14 15v9c0 7.2 5 12.8 12 14.2C39 26.8 44 21.2 44 14v-9L26 9z" fill="#0F1A2E" stroke="#F5C518" stroke-width="1.3"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Syne,sans-serif" font-weight="900" font-size="11" fill="#F5C518">RV</text></svg>
+        <span style="font-family:var(--sf);font-weight:800;font-size:.85rem">RV <em style="color:var(--gold);font-style:normal">Public School</em></span>
+      </div>
+      <p class="footer-desc">Pre-Nursery to Grade 10 · Jayanagar, Bangalore.<br>Raising Thinkers for a world with AI.</p>
+      <p style="font-size:.6rem;color:rgba(0,212,170,.45);margin-top:.6rem">Rashtreeya Sikshana Samithi Trust ®</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#xbridge">Explore School</a></li>
+        <li><a href="#why-sec">Why RVPS</a></li>
+        <li><a href="#testi-sec">Parent Stories</a></li>
+        <li><a href="#faq-sec">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Admissions</h4>
+      <ul>
+        <li><a href="#" onclick="openForm();return false">Apply for 2026–27</a></li>
+        <li><a href="#faq-sec">Fee Structure</a></li>
+        <li><a href="#faq-sec">Age Criteria</a></li>
+        <li><a href="#faq-sec">Transport Routes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📍 Jayanagar, Bangalore 560041</p>
+      <p>📞 +91 80 XXXX XXXX</p>
+      <p>✉️ admissions@rvps.edu.in</p>
+      <p>💬 <a href="https://wa.me/918012345678" target="_blank" style="color:var(--teal)">WhatsApp for quick queries</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 RV Public School, Bangalore. All rights reserved.</p>
+    <p style="font-size:.6rem;color:rgba(0,212,170,.4)">Raising Thinkers for a world with AI ®</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="wa" href="https://wa.me/918012345678?text=Hi%2C+interested+in+RVPS+admissions+2026-27" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<!-- FORM -->
+<div class="fov" id="fov">
+  <div class="fpanel" id="fpanel">
+    <button class="fcls" onclick="closeForm()">×</button>
+    <div class="fhdr">
+      <h3>Schedule a <span>Visit</span></h3>
+      <p>Take the first step. We'll call within 2 hours.</p>
+    </div>
+    <div class="fgrp"><label>Parent Name <span class="req">*</span></label><input type="text" id="fn" placeholder="Ex: Rahul Sharma"></div>
+    <div class="fgrp"><label>Phone Number <span class="req">*</span></label><input type="tel" id="fp" placeholder="+91"></div>
+    <div class="fgrp"><label>Grade Seeking Admission <span class="req">*</span></label>
+      <select id="fg"><option value="" disabled selected>Select Grade</option>
+        <option>Pre-Nursery</option><option>LKG / UKG</option><option>Grade 1–5</option><option>Grade 6–8</option><option>Grade 9–10</option>
+      </select>
+    </div>
+    <button class="fsub" onclick="submitForm(this)">Get Details Instantly →</button>
+    <div class="fok" id="fok">✅ Thank you! Our team will call you within 2 hours.</div>
+  </div>
+</div>
+
+<!-- BADGES -->
+<div class="badge-container" id="badge-container"></div>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
