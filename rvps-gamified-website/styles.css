@@ -5,21 +5,21 @@
 
 /* ─── TOKENS ─────────────────────────── */
 :root {
-  --ink:    #0B1120;
-  --ink2:   #0F1A2E;
-  --ink3:   #141F35;
-  --card:   rgba(255,255,255,.035);
-  --card2:  rgba(255,255,255,.055);
-  --line:   rgba(255,255,255,.07);
-  --gold:   #F5C518;
-  --gold2:  #FFE063;
-  --teal:   #00D4AA;
-  --purple: #8B5CF6;
-  --coral:  #FF6B6B;
-  --sky:    #60A5FA;
-  --white:  #F0F4F8;
-  --muted:  rgba(240,244,248,.6);
-  --dim:    rgba(240,244,248,.32);
+  --ink:    #F9F9F9;
+  --ink2:   rgba(0,0,0,0.02);
+  --ink3:   rgba(0,0,0,0.04);
+  --card:   rgba(0,0,0,0.025);
+  --card2:  rgba(0,0,0,0.04);
+  --line:   rgba(0,0,0,0.06);
+  --gold:   #C4B59D; /* Muted soft sand/taupe */
+  --gold2:  #A89B85; /* Darker taupe */
+  --teal:   #829A95; /* Muted slate teal */
+  --purple: #9D96A8;
+  --coral:  #B89494;
+  --sky:    #93A3B5;
+  --white:  #1F2937; /* Elegant dark gray text */
+  --muted:  rgba(31,41,55,0.7);
+  --dim:    rgba(31,41,55,0.45);
   --sf: 'Syne', sans-serif;
   --sb: 'Plus Jakarta Sans', sans-serif;
   --ease: cubic-bezier(.4,0,.2,1);
@@ -67,7 +67,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
   justify-content: space-between; transition: all .35s var(--ease);
 }
 .nav.scrolled {
-  background: rgba(11,17,32,.96); backdrop-filter: blur(20px);
+  background: rgba(255,255,255,.96); backdrop-filter: blur(20px);
   padding: .75rem 3rem; border-bottom: 1px solid var(--line);
 }
 .nav-brand { display: flex; align-items: center; gap: .6rem; }
@@ -266,7 +266,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 
 /* Floating labels around robot */
 .float-label {
-  position: absolute; background: rgba(10,22,40,.88); border-radius: 8px;
+  position: absolute; background: rgba(255,255,255,.95); border-radius: 8px;
   padding: .4rem .6rem; border: 1px solid; z-index: 5;
 }
 .float-label .fl-tag {
@@ -291,7 +291,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 
 /* ─── STATS ──────────────────────────── */
 .stats {
-  padding: 2rem 4rem; background: rgba(8,16,28,.6);
+  padding: 2rem 4rem; background: var(--ink2);
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
   position: relative; z-index: 2;
 }
@@ -311,7 +311,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 /* ─── EXPLORE BRIDGE ─────────────────── */
 .xbridge {
   padding: 3rem 2rem; text-align: center; position: relative; z-index: 2;
-  background: rgba(8,16,28,.3);
+  background: var(--ink2);
 }
 .xbridge-inner { max-width: 660px; margin: 0 auto; }
 .xbridge .stag {
@@ -471,7 +471,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 
 /* ─── FINAL UNLOCK ───────────────────── */
 .final-unlock {
-  text-align: center; position: relative; z-index: 2; background: rgba(8,16,28,.4);
+  text-align: center; position: relative; z-index: 2; background: var(--ink3);
   max-height: 0; overflow: hidden; opacity: 0;
   transition: max-height .5s ease, opacity .5s ease, padding .4s ease;
   padding: 0 2rem;
@@ -489,7 +489,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 
 /* ─── SECTION SYSTEM ─────────────────── */
 .sec { padding: 4.5rem 4rem; position: relative; z-index: 2; }
-.sec-alt { background: rgba(8,16,28,.35); }
+.sec-alt { background: var(--ink2); }
 .sec-inner { max-width: 1050px; margin: 0 auto; }
 .stag {
   display: inline-flex; align-items: center; gap: .35rem;
@@ -583,8 +583,8 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 /* ─── CTA BANNER ─────────────────────── */
 .ctabanner {
   margin: 0 3rem 3.5rem; padding: 3.5rem 3rem;
-  background: linear-gradient(135deg,rgba(27,40,56,.7),rgba(10,20,36,.92));
-  border: 1px solid rgba(245,197,24,.08); border-radius: 24px;
+  background: var(--ink2);
+  border: 1px solid rgba(0,0,0,.06); border-radius: 24px;
   text-align: center; position: relative; z-index: 2; overflow: hidden;
 }
 .ctabanner::before {
@@ -628,7 +628,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 
 /* ─── FORM ───────────────────────────── */
 .fov {
-  position: fixed; inset: 0; background: rgba(5,9,15,.88); backdrop-filter: blur(8px);
+  position: fixed; inset: 0; background: rgba(255,255,255,.85); backdrop-filter: blur(8px);
   z-index: 5000; opacity: 0; pointer-events: none; transition: opacity .35s;
 }
 .fov.open { opacity: 1; pointer-events: auto; }
@@ -667,7 +667,7 @@ button { cursor: pointer; font-family: var(--sb); border: none; outline: none; }
 /* ─── BADGES ─────────────────────────── */
 .badge-container { position: fixed; bottom: 16px; left: 16px; z-index: 999; display: flex; flex-direction: column; gap: 7px; }
 .achievement-badge {
-  background: rgba(10,20,35,.92); backdrop-filter: blur(14px);
+  background: rgba(255,255,255,.95); backdrop-filter: blur(14px);
   border: 1px solid var(--gold); padding: .65rem; border-radius: 13px;
   display: flex; align-items: center; gap: .65rem;
   transform: translateX(-150%); opacity: 0;

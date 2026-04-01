@@ -39,61 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // ═══════════════════════════════════════
-  //  PARTICLES CANVAS
+  //  PARTICLES CANVAS (REMOVED FOR LIGHTWEIGHT VERSION)
   // ═══════════════════════════════════════
-  (function() {
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var W, H, nodes = [];
-    var mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-      nodes = [];
-      var count = Math.max(15, Math.floor(W * H / 30000));
-      var colors = ['#F5C518','#00D4AA','#8B5CF6','#FF6B6B'];
-      for (var i = 0; i < count; i++) {
-        nodes.push({
-          x: Math.random()*W, y: Math.random()*H,
-          vx: (Math.random()-.5)*.22, vy: (Math.random()-.5)*.22,
-          r: Math.random()*1.6+.5, phase: Math.random()*Math.PI*2,
-          color: colors[Math.floor(Math.random()*4)]
-        });
-      }
-    }
-    window.addEventListener('resize', resize); resize();
-    document.addEventListener('mousemove', function(e){ mouseX=e.clientX; mouseY=e.clientY; });
-
-    (function draw() {
-      ctx.clearRect(0,0,W,H);
-      for (var i=0; i<nodes.length; i++) {
-        var n = nodes[i];
-        n.x += n.vx; n.y += n.vy;
-        if (n.x<-20) n.x=W+20; else if (n.x>W+20) n.x=-20;
-        if (n.y<-20) n.y=H+20; else if (n.y>H+20) n.y=-20;
-        n.phase += .012;
-        var dx=n.x-mouseX, dy=n.y-mouseY, dist=Math.sqrt(dx*dx+dy*dy);
-        if (dist<100) { var f=(100-dist)/100*.3; n.vx+=dx/dist*f*.03; n.vy+=dy/dist*f*.03; }
-        var spd=Math.sqrt(n.vx*n.vx+n.vy*n.vy);
-        if (spd>.45) { n.vx=n.vx/spd*.45; n.vy=n.vy/spd*.45; }
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r*(1+Math.sin(n.phase)*.2), 0, Math.PI*2);
-        ctx.fillStyle = n.color;
-        ctx.globalAlpha = (.3+Math.sin(n.phase)*.15)*.4;
-        ctx.fill(); ctx.globalAlpha = 1;
-        for (var j=i+1; j<nodes.length; j++) {
-          var m=nodes[j], d2=Math.sqrt(Math.pow(n.x-m.x,2)+Math.pow(n.y-m.y,2));
-          if (d2<120) {
-            ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y);
-            ctx.strokeStyle=n.color; ctx.globalAlpha=(1-d2/120)*.07;
-            ctx.lineWidth=.4; ctx.stroke(); ctx.globalAlpha=1;
-          }
-        }
-      }
-      requestAnimationFrame(draw);
-    })();
-  })();
 
   // ═══════════════════════════════════════
   //  ROBOT ASSEMBLY
@@ -359,10 +306,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var statsStarted = false;
   var statsEl = document.getElementById('stats-section');
   if (statsEl) {
-    new IntersectionObserver(function(entries) {
+    var statsObs = new IntersectionObserver(function(entries, observer) {
       for (var i = 0; i < entries.length; i++) {
         if (entries[i].isIntersecting && !statsStarted) {
           statsStarted = true;
+          observer.unobserve(statsEl);
           var counters = document.querySelectorAll('.cnt');
           for (var j = 0; j < counters.length; j++) {
             (function(counter) {
@@ -377,7 +325,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       }
-    }, { threshold: 0.5 }).observe(statsEl);
+    }, { threshold: 0.5 });
+    statsObs.observe(statsEl);
   }
 
   // ═══════════════════════════════════════
